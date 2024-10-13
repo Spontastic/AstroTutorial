@@ -1,5 +1,17 @@
 ---
-const pageTitle = "About Me";
+const pageTitle = "About the author";
+
+const identity = {
+	firstName: "Theophilus",
+	country: "Sardinia",
+	occupation: "Professional searcher",
+	hobbies: ["photography", "birdwatching", "baseball"],
+};
+const skills = ["HTML", "CSS", "JS", "Writing"];
+const happy = true;
+const finished = false;
+const goal = 3;i
+
 ---
 
 <html lang="en">
@@ -24,5 +36,12 @@ const pageTitle = "About Me";
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+<p>Here are a few facts about me:</p>
+<ul>
+	<li> My name is {identity.firstName}.</li>
+	<li> My nation state is {identity.country} and I work as a {identity.occupation}.</li>
+{happy && <p> "I am happy to be doing this tutorial" </p>}
+{finished && <p> "I finished this tutorial" </p>}
+{goal === 3 ? <p> "My goal is to finish in 3 days"</p> : <p>"My goal is not 3 days."</p>}
 	</body>
 </html>
