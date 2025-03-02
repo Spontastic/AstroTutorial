@@ -1,0 +1,55 @@
+---
+import Navigation from '../components/navigation.astro';
+import '../styles/global.css';
+
+const pageTitle = "Resources";
+const helpfuls = ["pubm", "bioblog"]
+---
+
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>{pageTitle}</title>
+<style>
+h1 {
+	color: purple;
+	font-size: 3rem;
+}
+ 
+.helpful {
+	color: red;
+	font-weight: bold;
+}
+</style>
+
+
+
+
+
+</head>
+
+
+<h1>{pageTitle}</h1>
+<body>
+<Navigation/>
+<p> Some good resources </p>
+
+<ul>
+	{helpfuls.map((helpful) => <li class="helpful">{helpful}</li>)}
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
