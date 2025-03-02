@@ -1,13 +1,13 @@
 ---
+import Navigation from '../components/navigation.astro/';
+import '../styles/global.css/';
+
+
+
 const pageTitle = "Home Page";
 ---
 
 <html lang="en">
-
-<a href="/"> Home</a>
-<a href="/about"> about</a>
-<a href="/blog"> blog</a>
-
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,7 +16,10 @@ const pageTitle = "Home Page";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<h1>Where is it?</h1>
+<Navigation/>
+
+
+	<h1>Where is it?</h1>
 		<p>10 to the 13th microbes and what do you know about them?
 	</body>
 </html>

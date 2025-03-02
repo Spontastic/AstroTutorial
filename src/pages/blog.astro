@@ -1,11 +1,12 @@
 ---
+import Navigation from '../components/navigation.astro';
+import '../styles/global.css';
+
 const pageTitle= "My Astro Learning Blog";
 ---
 <html lang="en">
 
-<a href="/">home</a>
-<a href="/about">about</a>
-<a href="/blog">blog</a>
+
 <head>
                 <meta charset="utf-8" />
                 <link rel="icon" type="image/svg+xml" href=
@@ -16,9 +17,10 @@ const pageTitle= "My Astro Learning Blog";
                 <title>pageTitle</title>
         </head>
         <body>
+<Navigation/>
                 <h1>Microscopic</h1>
 		<p>Bacteroides, Firmicutes, Prevotella, Clostridium, Bifidobacterium...
-Don't be afraid the Latin just remember Bacteria comes fromBacterium meaning "staff"</p>
+Don't be afraid of the Latin just remember: the word bacteria comes from 'Bacterium' meaning "staff"</p>
 	<ul>
 		<li><a href="/posts/post-1/">Post 1</a></li>
 		<li><a href="/posts/post-2/">Post 2</a></li>

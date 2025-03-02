@@ -1,17 +1,21 @@
 ---
+
 const pageTitle = "About the author";
 
 const identity = {
 	firstName: "Theophilus",
-	country: "Sardinia",
+	country: "British Columbia",
 	occupation: "Professional searcher",
 	hobbies: ["photography", "birdwatching", "baseball"],
 };
-const skills = ["HTML", "CSS", "JS", "Writing"];
+const skills = ["html", "css", "js", "writing"];
+const places = ["Boston", "Washinton DC", "Syracuse"];
 const happy = true;
 const finished = false;
-const goal = 3;i
-
+const goal = 3;
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -22,13 +26,26 @@ const goal = 3;i
 		<meta name="viewport' content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+		h1 {
+		color: purple;
+		font-size: 4 rem;
+}
+.skill{
+	color: var(--skillColor);
+	font-weight: var(--fontWeight);
+	text-transform: var(--textCase);
+}
+.place{
+	color: blue;
+	font-weight: bold;
+}
+</style>
+
 	</head>
 	<body>
 		<h1>About</h1>
-
-<a href="/"> home</a>
-<a href="/about">about</a>
-<a href="/blog">blog</a>
+<Navigation/>
 
   <h1>{pageTitle}</h1>
   <h2>... and my new Astro site!</h2>
@@ -37,11 +54,23 @@ const goal = 3;i
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
 <p>Here are a few facts about me:</p>
+<p> My skills are:</p>
+
 <ul>
+	{skills.map((skill) => <li class="skill">{skill}</li>)}
+</ul>
+<p> Places I have been:</p>
+<ul>
+	{places.map((place) => <li class="place">{place}</li>)}
+</ul>
 	<li> My name is {identity.firstName}.</li>
-	<li> My nation state is {identity.country} and I work as a {identity.occupation}.</li>
+	<li> I live in {identity.country} and I work as a {identity.occupation}.</li>
+{identity.hobbies.length >= 2 &&
+	<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}
+</ul>
 {happy && <p> "I am happy to be doing this tutorial" </p>}
 {finished && <p> "I finished this tutorial" </p>}
 {goal === 3 ? <p> "My goal is to finish in 3 days"</p> : <p>"My goal is not 3 days."</p>}
+	
 	</body>
 </html>
