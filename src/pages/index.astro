@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/navigation.astro/';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css/';
 
 
@@ -16,10 +17,11 @@ const pageTitle = "Home Page";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-<Navigation/>
+		<Header />
+		<Footer />
 
-
-	<h1>Where is it?</h1>
-		<p>10 to the 13th microbes and what do you know about them?
+		<h1>{pageTitle}</h1>
+		<Footer />
+ 
 	</body>
 </html>
